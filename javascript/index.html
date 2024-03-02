@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site iFood</title>
+</head>
+<body onload="window.alert('Seja bem vindo!')">
+    <p>Hello World!</p>
+    <input type="text" id="valor">
+    <button id="enviar" onclick="mudarValor">Enviar</button>
+    <div id="conteudo"></div>
+
+    <script>
+        document.querySelector("#enviar").addEventListener("click", mudarValor);
+
+        function mudarValor(){
+            document.querySelector("#valor").value = "Novo conteúdo";
+            if(document.getElementById("conteudo").innerHTML ==
+            "<p>Estou usando um smartphone</p>"){
+                document.getElementById("conteudo").innerHTML = 
+                "<p>Estou usando um computador</p>";
+            }
+            else {
+                document.getElementById("conteudo").innerHTML = 
+                "<p>Estou usando um smartphone</p>";
+            }
+        }
+    </script>    
+</body>
+</html>
