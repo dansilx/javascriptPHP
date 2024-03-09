@@ -21,3 +21,15 @@ nav a {
 .menu, .submenu { 
     list-style-type: none;
 }
+
+#logo {
+    font-size: 1.25em;
+}
+
+.item.button:hover {
+    background-color: dodgerblue;
+}
+
+.item:not(.button) a:hover {
+    color: gray;
+}
