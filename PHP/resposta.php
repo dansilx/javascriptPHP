@@ -45,6 +45,38 @@
     echo $mensagem = $sub == 0 ? "Igual a zero<br>" : "Diferente de zero<br>";
     echo $mensagem;
 
-    if ($soma == 0) && ($sub == 0) || (!$mult){
-        echo "Exibindo mensagem!";
+    // if ($soma == 0) && ($sub == 0) || (!$mult) {
+    //     echo "Exibindo mensagem!";
+    // }
+
+    $i = 0;
+    while($i < 10) {
+        echo $i;
+        $i++:
     }
+
+    for ($i=0; $i<10; $i++;) {
+        echo $i;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
