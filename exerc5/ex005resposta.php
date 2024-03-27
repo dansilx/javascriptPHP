@@ -2,7 +2,7 @@
 
     $valor = $_POST['valor'];
     $resultado = 1;
-    for ($i=1; $i < $valor; $i++) {
+    for ($i=1; $i < $valor+1; $i++) {
         $resultado *= $i;  
     }
 

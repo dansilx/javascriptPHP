@@ -7,9 +7,8 @@
 </head>
 <body>
     <form action="ex005resposta.php" method="post">
-        <label for="">Informe um número para calcular o fatorial</label>
-        <input type="number" name="valor">
+        <label for="">Informe um número para calcular o fatorial</label> <br>
+        <input type="number" name="valor"> <br>
         <button type="submit">Enviar</button>
-    </form>
 </body>
-</html>
+</html>  
