@@ -7,8 +7,8 @@
 </head>
 <body>
     <form action="ex009resposta.php" method="post">
-        <label>Informe o ano de seu nascimento: </label>
-        <input type="number" name="idade">
+        <label>Informe o ano de seu nascimento: </label><br>
+        <input type="number" name="anoNasc"><br>
         <button type="submit">Enviar</button>
     </form>
 </body>
