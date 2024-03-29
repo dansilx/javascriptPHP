@@ -7,16 +7,17 @@
 </head>
 <body>
     <h1>Calculadora de IMC: </h1>
-    <form action="ex010resposta.php" method="post"></form>
-    <label for="nome">Nome: </label>
-    <input type="text" id="nome" name="nome" required><br><br>
+    <form action="ex010resposta.php" method="post">
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" name="nome" required><br><br>
 
-    <label for="peso">Peso(kg): </label>
-    <input type="number" id="peso" name="peso" required><br><br>
+        <label for="peso">Peso(kg): </label>
+        <input type="number" id="peso" name="peso" required><br><br>
 
-    <label for="altura">Altura(m): </label>
-    <input type="number" id="altura" name="altura" required><br><br>
+        <label for="altura">Altura(m): </label>
+        <input type="number" id="altura" name="altura" required><br><br>
 
-    <button type="submit">Calcular</button>
+        <button type="submit">Calcular</button>
+    </form>
 </body>
 </html>
