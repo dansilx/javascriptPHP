@@ -9,7 +9,7 @@
     <form action="" method="post">
         <?php
             for ($i=0;$i<7;$i++){
-                echo '<input type="number" name="valores[]">';
+                echo '<input type="number" name="valores[]"><br>';
             } 
         ?>
         <button type="submit">Ok!</button>
