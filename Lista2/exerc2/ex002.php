@@ -11,7 +11,7 @@
         <?php 
             for ($i=0;$i<10;$i++) {
                 echo '<label>Digite um número</label><br>
-                    <input type="number" name="numero[]"><br>';
+                    <input type="number" name="numeros[]"><br>';
             }
         ?>
         <button type="submit">Enviar</button>

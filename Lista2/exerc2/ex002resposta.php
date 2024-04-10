@@ -4,12 +4,8 @@
     $positivos = 0;
     $pares = 0;
     $impares = 0;
+    $numeros = $_POST["numeros"];
     
-    
-    $numeros = array();
-    for($i=0;$i<10;$i++) {
-        $numeros[] = $_POST["numero$i"];
-    }
 
     foreach ($numeros as $numero) {
         if($numero < 0) {
