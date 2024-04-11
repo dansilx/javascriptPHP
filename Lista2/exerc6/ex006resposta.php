@@ -14,7 +14,7 @@
 
     $opcao = (int) $_POST["opcao"];
 
-    echo $opcao;
+    //echo $opcao;
 
     $produtos = array();
     foreach($_POST['nome'] as $key => $nome)
