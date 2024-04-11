@@ -8,7 +8,7 @@
 <body>
     <h1>Cadastro de produto: </h1>
     <form action="ex006resposta.php" method="post" 
-        onsubmit="return beforeSubmit()">
+        onsubmit="return beforeSubmit();">
         <input type="hidden" name="opcao" id="opcao" value="">
 
         <?php 

@@ -25,12 +25,9 @@
         }
 
         public function calcMedia(array $produtos): float {
-            $soma = array_sum($produtos);
-            $qtde = count($produtos);
-            if ($qtde > 0) {
-                return $soma / $qtde;
-            } else {
-                return 0;
-            }
+            $total = array_reduce($produtos, function($carry, $produto) {
+                return $carry + $produto->preco;
+            }, 0);
+            return $total / count($produtos);
         }
     }
