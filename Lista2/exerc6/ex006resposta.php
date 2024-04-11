@@ -1,25 +1,28 @@
 <?php 
 
-    require 'Produto.php';
+    require_once 'Produto.php';
+    require_once 'Estatisticas.php';
+
+    // echo "<pre>";
+    // print_r([
+    //     "nomes" => $_POST['nome'],
+    //     "precos" => $_POST['preco']
+    // ]); 
+    // echo "</pre>";
+
+    // exit;
+
+    $opcao = (int) $_POST["opcao"];
+
+    echo $opcao;
 
     $produtos = array();
-    $nome = $_POST['nome'];
-    $preco = $_POST['preco'];
-    $produtos[] = new Produto($nome, $preco);
+    foreach($_POST['nome'] as $key => $nome)
+    {
+        $preco = $_POST['preco'][$key]; //retorna o preço do produto
+        $produtos[] = new Produto($nome, $preco);
+    }
     $stats = new Estatisticas($produtos);
-
-    echo "Escolha uma das opções abaixo:<br>";
-    echo "1. Quantidade de produtos com preço inferior a R$50,00<br>";
-    echo "2. Quantidade de produtos com preço entre R$50,00 e R$100,00<br>";
-    echo "3. Quantidade de produtos com preço superior a R$100,00<br>";
-    echo "4. Nomes dos produtos com preço inferior a R$50,00<br>";
-    echo "5. Nomes dos produtos com preço entre R$50,00 e R$100,00<br>";
-    echo "6. Nomes dos produtos com preço superior a R$100,00<br>";
-    echo "7. Média dos preços dos produtos com preço inferior a R$50,00<br>";
-    echo "8. Média dos preços dos produtos com preço entre R$50,00 e R$100,00<br>";
-    echo "9. Média dos preços dos produtos com preço superior a R$100,00<br><br>";
-    
-    $opcao = readline("Digite o número da opção desejada: ");
 
     switch ($opcao) {
         case 1:
