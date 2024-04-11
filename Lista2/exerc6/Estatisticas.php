@@ -26,7 +26,7 @@
 
         public function calcMedia(array $produtos): float {
             $total = array_reduce($produtos, function($carry, $produto) {
-                return $carry + $produto->preco;
+                return $carry + $produto->getPreco();
             }, 0);
             return $total / count($produtos);
         }
