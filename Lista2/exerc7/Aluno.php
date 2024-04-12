@@ -10,13 +10,14 @@ class Aluno {
         $this->nome = $nome;
         $this->nota1 = $nota1;
         $this->nota2 = $nota2;
+        $this->media = ($nota1 + $nota2) / 2;
     }
 
     public function getNome(): string {
         return $this->nome;
     }
 
-    public function calcMedia():float {
-        return ($this->nota1 + $this->nota2) / 2;
+    public function getMedia(): float {
+        return $this->media;
     }
 }
