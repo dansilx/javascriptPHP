@@ -13,6 +13,11 @@ class Person {
         $this->altura = $altura;
         
     }
+
+    public function getPeso() {
+        return $this->peso;
+    }
+    
     public function calcularIMC() {
         $this->imc = $this->peso / ($this->altura ** 2);
         return $this->imc;

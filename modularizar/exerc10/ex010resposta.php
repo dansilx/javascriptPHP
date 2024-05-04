@@ -11,6 +11,8 @@
     $calculo = $objeto->calcularIMC();
     $definir = $objeto->definirIMC();
 
-    echo "{$nome} seu IMC é " . number_format($calculo , 2)."<br>".$definir.".";
+    echo "{$nome} seu IMC é " . number_format($calculo, 2)."<br>".$definir.".";
+
+    //echo $objeto->getPeso(); 
     
     require_once "../footer.php";
