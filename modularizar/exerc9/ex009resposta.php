@@ -23,8 +23,8 @@
 
     $idade25 = idade25($anoNasc );
 
-    echo "   <p>-- Sua idade é $idade anos --</p>";
-    echo "<p>-- Você já viveu $diasVividos dias --</p>";
-    echo "<p>-- Você terá $idade25 anos em 2025 --</p>";
+    echo "<p class='text-white m-2 h2'>-- Sua idade é $idade anos --</p>";
+    echo "<p class='text-white m-2 h2'>-- Você já viveu $diasVividos dias --</p>";
+    echo "<p class='text-white m-2 h2'>-- Você terá $idade25 anos em 2025 --</p>";
 
     require_once "../footer.php";

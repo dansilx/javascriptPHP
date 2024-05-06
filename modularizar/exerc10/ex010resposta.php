@@ -8,10 +8,10 @@
     $altura = $_POST['altura'];
 
     $objeto = new Person($nome, $peso, $altura);
-    $calculo = $objeto->calcularIMC();
+    $calculo = number_format($objeto->calcularIMC(),2);
     $definir = $objeto->definirIMC();
 
-    echo "{$nome} seu IMC é " . number_format($calculo, 2)."<br>".$definir.".";
+    echo "<p class='text-white m-2 h2'>{$nome} seu IMC é $calculo  <br> $definir</p>";
 
     //echo $objeto->getPeso(); 
     

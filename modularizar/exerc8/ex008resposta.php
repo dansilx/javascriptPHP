@@ -7,8 +7,9 @@
     $tintaLitro = $area / 3;
     $latas = ceil($tintaLitro/18);
     $total = $latas * 80; 
+    $numero = number_format($total, 2, ',', '.');
 
-    echo "A quantidade de lata(s) de tinta necessária(s): $latas<br>";
-    echo "Preço total: R$ ".number_format($total, 2, ',', '.');
+    echo "<p class='text-white m-2 h2'>A quantidade de lata(s) de tinta necessária(s): $latas</p><br>";
+    echo "<p class='text-white m-2 h2'>Preço total: R$ $numero</p>";
 
     require_once "../footer.php";

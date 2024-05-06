@@ -25,13 +25,13 @@ class Person {
 
     public function definirIMC() {
         if ($this->imc <18.5) {
-            return "Você está abaixo do peso";
+            return "<p class='text-white m-2 h2'>Você está abaixo do peso</p>";
         } elseif ($this->imc >= 18.5 && $this->imc < 24.9){
-            return "Seu peso está normal";
+            return "<p class='text-white m-2 h2'>Seu peso está normal</p>";
         } elseif ($this->imc >= 24.9 && $this->imc < 29.9) {
-            return "Você possui um sobrepeso";
+            return "<p class='text-white m-2 h2'>Você possui um sobrepeso</p>";
         } else {
-            return "Obesidade. Você está acima do peso";
+            return "<p class='text-white m-2 h2'>Obesidade. Você está acima do peso</p>";
         }
     }
 }

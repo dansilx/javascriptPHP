@@ -4,6 +4,6 @@
 
     $metro = $_POST['metro'];
     $centimetro = $metro * 100;
-    echo "$metro m = $centimetro cm";
+    echo "<p class='text-white m-5 h2'>$metro m = $centimetro cm</p>";
 
     require_once "../footer.php";

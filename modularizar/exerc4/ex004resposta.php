@@ -2,11 +2,8 @@
 
     require_once "../header.php";
 
-    $valor = $_POST['valor'];
+    $_POST['valor'];
 
-    for ($i=1;$i<11;$i++) {
-        $resultado = $valor * $i;
-        echo "$valor x $i = $resultado <br>";
-    }
+    tabuada($_POST['valor']);
 
     require_once "../footer.php";

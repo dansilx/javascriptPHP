@@ -1,12 +1,8 @@
 <?php
     require_once "../header.php";
 
-    $valor = $_POST['valor'];
-    $resultado = 1;
-    for ($i=1; $i < $valor+1; $i++) {
-        $resultado *= $i;  
-    }
+    $_POST['valor'];
 
-    echo "Fatorial de $valor é $resultado";
+    echo "<p class='text-white m-5 h3'>Fatorial de ".$_POST['valor']." é ".fatorial($_POST['valor']). "</p>";
 
     require_once "../footer.php";

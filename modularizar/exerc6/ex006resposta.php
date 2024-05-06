@@ -2,19 +2,8 @@
 
     require_once "../header.php";
 
-    $valorA = $_POST['valorA'];
-    $valorB = $_POST['valorB'];
+    $valor = $_POST['valor'];
 
-    if ($valorA > $valorB) {
-        echo "$valorB $valorA";
-    }
-
-    if ($valorB > $valorA) {
-        echo "$valorA $valorB";
-    }
-
-    if ($valorA == $valorB) {
-        echo "Números iguais: $valorA";
-    }
+    echo comparaNum($valor);
 
     require_once "../footer.php";

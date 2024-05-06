@@ -5,13 +5,7 @@
     $valor1 = $_POST['valor1'];
     $valor2 = $_POST['valor2'];
 
-    if($valor1 == $valor2) {
-        $triple = $valor1 * 3;
-        echo "O resultado é $triple";
-    } else {
-        $soma = $valor1 + $valor2;
-        echo "O resultado é $soma";
-    }
+    echo "<p class='text-white m-5 h4'> O resultado é ".somaOuTriple($valor1, $valor2)."</p>";
 
 
     require_once "../footer.php";

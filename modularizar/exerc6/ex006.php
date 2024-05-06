@@ -3,11 +3,11 @@
 ?>
 
     <form action="ex006resposta.php" method="post">
-        <label>Informe um primeiro valor: </label><br>
-        <input type="number" name="valorA"><br>
-        <label>Informe um segundo valor: </label><br>
-        <input type="number" name="valorB"><br><br>
-        <button type="submit">Enviar</button>
+        <label class="form-label text-white my-3 h5">Informe um primeiro valor: </label><br>
+        <input type="number" class="form-control" name="valor[]"><br>
+        <label class="form-label text-white my-3 h5">Informe um segundo valor: </label><br>
+        <input type="number" class="form-control" name="valor[]"><br><br>
+        <button type="submit" class="btn btn-outline-primary mt-3">Enviar</button>
     </form>
 
 <?php
