@@ -1,1 +1,1 @@
-INSERT INTO categoria (descricao) VALUES ("Categoria 1"), ("Categoria 2"), ("Categoria 3"); 
+SELECT * FROM bancophp.produto;
