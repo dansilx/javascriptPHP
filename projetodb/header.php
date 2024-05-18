@@ -32,3 +32,9 @@
   </div>
 </nav>
 <main class="container">
+
+<?php
+  require_once("funcao.php");
+  if(conectarBanco()) {
+    echo '<p class="text-white">Conexão realizada com sucesso!</p>';
+  }
