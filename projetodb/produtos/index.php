@@ -23,11 +23,11 @@
                 while($l = $linhas->fetch(PDO::FETCH_ASSOC)) {
             ?>
             <tr>
-                <td>Persuasão</td>
-                <td>Livro de Jane Auesten</td>
-                <td>R$ 10,00</td>
-                <td>Livros</td>
-                <td>
+                <td><?= $l['nome']?></td>
+                <td><?= $l['descricao']?></td>
+                <td><?= $l['valor']?></td>
+                <td><?= $l['categoria']?></td>
+                <td class="d-flex justify-content-end">
                     <a href="alterar_produto.php" class="btn btn-outline-warning">
                         Alterar
                     </a>
