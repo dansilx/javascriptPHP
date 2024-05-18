@@ -26,9 +26,12 @@
             <div class="col">
                 <label for="categoria" class="form-label m-2 ">Selecione a categoria: </label>
                 <select name="categoria" id="" class="form-select m-2 bg-secondary text-white">
-                    <option value="1">Categoria 1</option>
-                    <option value="2">Categoria 2</option>
-                    <option value="3">Categoria 3</option>
+                    <?php 
+                        $linhas = retornarCategorias();
+                        while($l = $linhas->fetch(PDO::FETCH_ASSOC)){
+                            echo "<option value='{$l['id']}'>{$l['descricao']}</option>";
+                        }
+                    ?>
                 </select>
             </div>
         </div>
