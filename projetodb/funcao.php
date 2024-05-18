@@ -30,3 +30,13 @@
             return 0;
         }
     }
+
+    function retornarProdutos() {
+        try {
+            $sql = "SELECT * FROM produto";
+            $conexao = conectarBanco();
+            return $conexao->query($sql);
+        } catch(Exception $e) {
+            return 0;
+        } 
+    }
