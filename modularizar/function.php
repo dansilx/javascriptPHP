@@ -61,16 +61,39 @@
         return $resultado;
     }
 
-    function comparaNum($nums) {
-        if ($nums[0] > $nums[1]) {
-            return "<p class='text-white m-5 h2'> $nums[1] $nums[0] </p>";
+    function comparaNum($a, $b) {
+        if ($a == $b) {
+            echo "<p class='text-white m-5 h2'>Os valores são iguais: " . $a . "</p>";
+        } else {
+            if ($a < $b) {
+                echo "<p class='text-white m-5 h2'>" . $a . " ". $b . "</p>";
+            } else {
+                echo "<p class='text-white m-5 h2'>" . $b . " ". $a . "</p>";
+            }
         }
+    }
+
+    function cmtoM($metro) {
+        return $metro * 100;
+    }
+
+    function latas($area) {
+        return ceil(($area / 3)/18);
+    }
+
+    function totalLatas($area) {
+        $calculo = latas($area);
+        return number_format(($calculo * 80), 2, ',', '.');
+    }
+
+    function calcIdade($anoNasc, $anoAtual) {
+        return $anoAtual - $anoNasc;
+    }
     
-        if ($nums[1] > $nums[0]) {
-            return "<p class='text-white m-5 h2'>$nums[0] $nums[1]</p>";
-        }
-    
-        if ($nums[0] == $nums[1]) {
-            return "<p class='text-white m-5 h3'>Números iguais: $nums[0]</p>";
-        }
+    function diasVividos($anoNasc, $anoAtual) {
+        return ($anoAtual -$anoNasc) * 365;
+    }
+
+    function idade25($anoNasc) {
+        return 2025 - $anoNasc;
     }

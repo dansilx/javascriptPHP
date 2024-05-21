@@ -2,8 +2,9 @@
 
     require_once "../header.php";
 
-    $valor = $_POST['valor'];
+    $valA = $_POST['valA'];
+    $valB = $_POST['valB'];
 
-    echo comparaNum($valor);
+    comparaNum($valA, $valB);
 
     require_once "../footer.php";

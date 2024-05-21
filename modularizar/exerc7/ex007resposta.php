@@ -2,8 +2,8 @@
 
     require_once "../header.php";
 
-    $metro = $_POST['metro'];
-    $centimetro = $metro * 100;
-    echo "<p class='text-white m-5 h2'>$metro m = $centimetro cm</p>";
+    $_POST['metro'];
+
+    echo "<p class='text-white m-5 h2'>" . $_POST['metro'] . " m = " . cmtoM($_POST['metro']) . "cm</p>";
 
     require_once "../footer.php";
