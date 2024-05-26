@@ -91,7 +91,7 @@
     }
     
     function diasVividos($anoNasc, $anoAtual) {
-        return ($anoAtual -$anoNasc) * 365;
+        return ($anoAtual - $anoNasc) * 365;
     }
 
     function idade25($anoNasc) {

@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="produtos/index.php">Produtos</a>
+          <a class="nav-link active text-white" aria-current="page" href="/projetodb/produtos/index.php">Produtos</a>
         </li>
       </ul>
       </form>

@@ -8,7 +8,7 @@
     <title>Desafio 01</title>
 </head>
 <body>
-    <form action="program.php">
+    <form action="program.php" method="POST">
 
         <label for="voltas">Número de Voltas: </label>
         <input type="number" id="voltas" name="voltas" required>
