@@ -2,7 +2,7 @@
     require_once("../header.php");
 ?>
 
-    <h3 class="text-white">Alterar Produto</h3>
+    <h3 class="text-white">Alterar Aluno</h3>
     <form class="bg-success text-white">
         <div class="row">
             <div class="col">
@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label m-2">Informe a descrição: </label>
+                <label for="nome" class="form-label m-2">Informe a idade: </label>
                 <input type="text" class="form-control m-2 bg-light text-success" name="descricao">
             </div>
         </div>

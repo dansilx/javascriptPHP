@@ -7,7 +7,7 @@
 
     function retornarCategorias() {
         try {
-            $sql = "SELECT * FROM categoria";
+            $sql = "SELECT * FROM estudante";
             $conexao = conectarBanco();
             return $conexao->query($sql);
         } catch(Exception $e) {
@@ -15,16 +15,16 @@
         } 
     }
 
-    function inserirAluno($nome, $idade, $serie, $professor) {
+    function inserirAluno($nome, $idade, $serie, $idAluno) {
         try {
 
-            $sql = "INSERT INTO produto (nome, descricao, valor, categoria_id) VALUES (:nome, :descricao, :valor, :categoria)";
+            $sql = "INSERT INTO  estudante (nome, idade, serie, id_aluno) VALUES (:nome, :idade, :serie, :aluno_id)";
             $conexao = conectarBanco();
             $stmt = $conexao->prepare($sql);
             $stmt->bindValue(":nome", $nome);
             $stmt->bindValue(":idade", $idade);
             $stmt->bindValue(":serie", $serie);
-            $stmt->bindValue(":professor", $professor);
+            $stmt->bindValue(":aluno_id", $idAluno);
             return $stmt->execute();
         } catch (Exception $e) {
             return 0;
@@ -33,8 +33,8 @@
 
     function retornarAluno() {
         try {
-            $sql = "SELECT p.*, c.descricao as categoria FROM produto p 
-                    INNER JOIN categoria c ON c.id = p.categoria_id";
+            $sql = "SELECT e.*, a.idade as aluno_id FROM estudante e 
+                    INNER JOIN aluno_id a ON a.aluno_id = e.aluno_id";
             $conexao = conectarBanco();
             return $conexao->query($sql);
         } catch(Exception $e) {

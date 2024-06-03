@@ -13,7 +13,7 @@
                 <th>Nome</th>
                 <th>Idade</th>
                 <th>Série</th>
-                <th>Professor</th>
+                <th>ID</th>
                 <th></th>
             </tr>
         </thead>
@@ -26,7 +26,7 @@
                 <td><?= $l['nome']?></td>
                 <td><?= $l['idade']?></td>
                 <td><?= $l['serie']?></td>
-                <td><?= $l['professor']?></td>
+                <td><?= $l['aluno_id']?></td>
                 <td class="d-flex justify-content-end">
                     <a href="alterar_aluno.php" class="btn btn-outline-success">
                         Alterar

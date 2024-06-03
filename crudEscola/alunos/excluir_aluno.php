@@ -2,7 +2,7 @@
     require_once("../header.php");
 ?>
 
-    <h3 class="text-white">Excluir Produto</h3>
+    <h3 class="text-white">Excluir Aluno</h3>
     <form class="bg-dark text-white">
         <div class="row">
             <div class="col">
@@ -24,7 +24,7 @@
         </div>
         <div class="rol">
             <div class="col">
-                <label for="professor" class="form-label m-2 ">Selecione o Professor: </label>
+                <label for="professor" class="form-label m-2 ">Selecione o ID do Aluno: </label>
                 <select name="professor" id="" class="form-select m-2 bg-light text-success" disabled>
                     <option value="1">Categoria 1</option>
                     <option value="2">Categoria 2</option>
