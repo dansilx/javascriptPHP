@@ -4,8 +4,8 @@
 
 ?>
 
-    <h3 class="text-white my-3">Registro de Alunos</h3>
-    <a href="inserir_aluno.php" class="btn btn-outline-success mt-3">Adicionar Alunos</a>
+    <h3 class="text-white my-3">Registro de Professores</h3>
+    <a href="inserir_aluno.php" class="btn btn-outline-success mt-3">Adicionar Professor</a>
 
     <table class="mt-3 table table-hover table-striped text-white table-dark">
         <thead>

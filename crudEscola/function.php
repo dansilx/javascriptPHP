@@ -1,13 +1,13 @@
 <?php
 
     function conectarBanco() {
-        $conexao = new PDO("mysql:host=localhost; dbname=bancophp", "root", "");
+        $conexao = new PDO("mysql:host=localhost; dbname=bancoescola", "root", "");
         return $conexao;
     }
 
-    function retornarCategorias() {
+    function retornarAlunos() {
         try {
-            $sql = "SELECT * FROM estudante";
+            $sql = "SELECT * FROM estudantes";
             $conexao = conectarBanco();
             return $conexao->query($sql);
         } catch(Exception $e) {
@@ -18,13 +18,13 @@
     function inserirAluno($nome, $idade, $serie, $idAluno) {
         try {
 
-            $sql = "INSERT INTO  estudante (nome, idade, serie, id_aluno) VALUES (:nome, :idade, :serie, :aluno_id)";
+            $sql = "INSERT INTO  estudante (nome, idade, serie, id) VALUES (:nome, :idade, :serie, :id)";
             $conexao = conectarBanco();
             $stmt = $conexao->prepare($sql);
             $stmt->bindValue(":nome", $nome);
             $stmt->bindValue(":idade", $idade);
             $stmt->bindValue(":serie", $serie);
-            $stmt->bindValue(":aluno_id", $idAluno);
+            $stmt->bindValue("id", $idAluno);
             return $stmt->execute();
         } catch (Exception $e) {
             return 0;

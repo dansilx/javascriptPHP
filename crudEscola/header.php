@@ -30,10 +30,19 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="/alunos/index.php" class="sidebar-link">
+                    <a href="/" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
                         <i class="lni lni-agenda"></i>
                         <span>Registrar</span>
                     </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="alunos/index.php" class="sidebar-link">Alunos</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="professores/index.php" class="sidebar-link">Professores</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
