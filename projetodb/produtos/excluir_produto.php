@@ -4,34 +4,24 @@
         $id = $_GET['id'];
         session_start();
         $_SESSION['id'] = $id;
-    } else {
-        $id = $_SESSION['id'];
-        $dados = consultarProdutoId($id);
-    }
-    $_SESSION['id'] = $id;
-
-    if ($_POST) {
-        $nome = $_POST['nome'];
-        $descricao = $_POST['descricao'];
-        $valor = $_POST['valor'];
-        $categoria = $_POST['categoria'];
-        if ($nome != "" && $descricao != "" && $valor != "" && $categoria != "") {
-            session_start();
-            if(excluirProduto($nome, $descricao, $valor, $categoria, $_SESSION['id'])){
-                echo '<p class="text-white">Registro excluído com sucesso!</p>';
-            } else {
-                echo '<p class="text-white">Erro ao excluir o registro!</p>';
-            }
-        } else {
-            echo '<p class="text-white">Preencha todos os campos!</p>';
-        }
     }
     
+    if ($_POST) {
+        if(excluirProduto($_SESSION['id'])){
+            echo "<script>alert()
+            </script>";
+            header('Location: index.php');
+        } else {
+            echo '<p class="text-white">Erro ao excluir o registro!</p>';
+        }
+    }
+
     $dados = consultarProdutoId($id);
 ?>
 
     <h3 class="text-white">Excluir Produto</h3>
     <form action="" method="POST" class="bg-dark text-white">
+        <!-- <input type="hidden" name="id"> -->
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Informe o nome: </label>
@@ -69,7 +59,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-outline-danger m-2">Excluir</button>
+                <input type="submit" class="btn btn-outline-danger m-2" value="Excluir">
             </div>
         </div>
     </form>
