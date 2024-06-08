@@ -1,7 +1,7 @@
 <?php
 
     function conectarBanco() {
-        $conexao = new PDO("mysql:host=localhost; dbname=bancoescola", "root", "");
+        $conexao = new PDO("mysql:host=localhost; dbname=escola", "root", "");
         return $conexao;
     }
 

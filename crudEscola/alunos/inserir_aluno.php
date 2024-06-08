@@ -1,5 +1,5 @@
 <?php
-    require_once("../header.php");
+    require_once("header2.php");
 ?>
 
     <h3 class="text-white">Inserir Produto</h3>
@@ -7,25 +7,25 @@
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Informe o nome: </label>
-                <input type="text" class="form-control m-2 bg-light text-success" name="nome" required>
+                <input type="text" class="form-control m-2 bg-primary text-success" name="nome" required>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Informe a idade: </label>
-                <input type="number" class="form-control m-2 bg-light text-success" name="idade" required>
+                <input type="number" class="form-control m-2 bg-primary text-success" name="idade" required>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Informe a série: </label>
-                <input type="text" class="form-control m-2 bg-light text-success" name="serie" required>
+                <input type="text" class="form-control m-2 bg-primary text-success" name="serie" required>
             </div>
         </div>
         <div class="rol">
             <div class="col">
                 <label for="categoria" class="form-label m-2 ">Selecione o professor: </label>
-                <select name="professor" id="" class="form-select m-2 bg-light text-success" required>
+                <select name="professor" id="" class="form-select m-2 bg-primary text-success" required>
                     <?php 
                         $linhas = retornarAluno();
                         while($l = $linhas->fetch(PDO::FETCH_ASSOC)){
@@ -58,4 +58,4 @@
             echo '<p class="text-white">Preencha todos os campos!</p>';
         }
     }
-    require_once("../footer.php");
+    require_once("footer2.php");

@@ -1,13 +1,13 @@
 <?php
 
-    require_once("../header.php");
+    require_once("header2.php");
 
 ?>
 
     <h3 class="text-white my-3">Registro de Alunos</h3>
-    <a href="inserir_aluno.php" class="btn btn-outline-success mt-3">Adicionar Alunos</a>
+    <a href="inserir_aluno.php" class="btn btn-outline-light mt-3">Adicionar Alunos</a>
 
-    <table class="mt-3 table table-hover table-striped text-white table-dark">
+    <table class=" text-light mt-3 table table-hover table-striped table-success">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -44,4 +44,4 @@
 
 <?php
 
-    require_once("../footer.php");
+    require_once("footer2.php");

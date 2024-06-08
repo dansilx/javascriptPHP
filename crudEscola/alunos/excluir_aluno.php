@@ -1,5 +1,5 @@
 <?php
-    require_once("../header.php");
+    require_once("header2.php");
 ?>
 
     <h3 class="text-white">Excluir Aluno</h3>
@@ -42,4 +42,4 @@
 
 <?php
 
-    require_once("../footer.php");
+    require_once("footer2.php");
