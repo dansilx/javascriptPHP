@@ -28,12 +28,13 @@
                 <td><?= $l['valor']?></td>
                 <td><?= $l['categoria']?></td>
                 <td class="d-flex justify-content-end">
-                    <a href="alterar_produto.php" class="btn btn-outline-warning">
+                    <a href="alterar_produto.php?id=<?=$l['id']?>" class="btn btn-outline-warning m-2">
                         Alterar
                     </a>
-                    <a href="excluir_produto.php" class="btn btn-outline-danger">
+                    <a href="excluir_produto.php?id=<?=$l['id']?>" class="btn btn-outline-danger m-2">
                         Excluir
                     </a>
+                </td>
                 </td>
             </tr>
             <?php

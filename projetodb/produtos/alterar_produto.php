@@ -1,34 +1,69 @@
 <?php
     require_once("../header.php");
+    if (isset($_GET['id'])){
+        $id = $_GET['id'];
+        session_start();
+        $_SESSION['id'] = $id;
+    } else {
+        $id = $_SESSION['id'];
+        $dados = consultarProdutoId($id);
+    }
+    $_SESSION['id'] = $id;
+
+    if ($_POST) {
+        $nome = $_POST['nome'];
+        $descricao = $_POST['descricao'];
+        $valor = $_POST['valor'];
+        $categoria = $_POST['categoria'];
+        if ($nome != "" && $descricao != "" && $valor != "" && $categoria != "") {
+            session_start();
+            if(alterarProduto($nome, $descricao, $valor, $categoria, $_SESSION['id'])){
+                echo '<p class="text-white">Registro alterado com sucesso!</p>';
+            } else {
+                echo '<p class="text-white">Erro ao alterar o registro!</p>';
+            }
+        } else {
+            echo '<p class="text-white">Preencha todos os campos!</p>';
+        }
+    }
+    
+    $dados = consultarProdutoId($id);
 ?>
 
     <h3 class="text-white">Alterar Produto</h3>
-    <form class="bg-dark text-white">
+    <form action="" method="POST" class="bg-dark text-white">
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Informe o nome: </label>
-                <input type="text" class="form-control m-2 bg-secondary text-white" name="nome">
+                <input type="text" class="form-control m-2 bg-secondary text-white" name="nome" value="<?=$dados['nome']?>">
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Informe a descrição: </label>
-                <input type="text" class="form-control m-2 bg-secondary text-white" name="descricao">
+                <input type="text" class="form-control m-2 bg-secondary text-white" name="descricao" value="<?=$dados['descricao']?>">
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Informe o valor: </label>
-                <input type="text" class="form-control m-2 bg-secondary text-white" name="valor">
+                <input type="text" class="form-control m-2 bg-secondary text-white" name="valor" value="<?=$dados['valor']?>">
             </div>
         </div>
         <div class="rol">
             <div class="col">
                 <label for="categoria" class="form-label m-2 ">Selecione a categoria: </label>
-                <select name="categoria" id="" class="form-select m-2 bg-secondary text-white">
-                    <option value="1">Categoria 1</option>
-                    <option value="2">Categoria 2</option>
-                    <option value="3">Categoria 3</option>
+                <select name="categoria" id="" class="form-select m-2 bg-secondary text-white" required>
+                    <?php 
+                        $linhas = retornarCategorias();
+                        while($l = $linhas->fetch(PDO::FETCH_ASSOC)){
+                            if ($l['id'] == $dados['categoria_id']) {
+                            echo "<option selected value='{$l['id']}'>{$l['descricao']}</option>";
+                            } else {
+                                echo "<option value='{$l['id']}'>{$l['descricao']}</option>";
+                            }
+                        }
+                    ?>
                 </select>
             </div>
         </div>
@@ -40,5 +75,5 @@
     </form>
 
 <?php
-
+     
     require_once("../footer.php");
