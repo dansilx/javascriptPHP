@@ -108,7 +108,7 @@
         <div class="main p-3">
             <div class="text-center"></div>
 
-    <main bg-success>
+    <main class="container">
 
     <?php
         require_once("../function.php");

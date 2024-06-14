@@ -59,7 +59,7 @@ body {
 
 .toggle-btn i {
     font-size: 1.5rem;
-    color: #198754;
+    color: forestgreen;
 }
 
 .sidebar-logo {
@@ -67,7 +67,7 @@ body {
 }
 
 .sidebar-logo a {
-    color: #198754;
+    color: forestgreen;
     font-size: 1.15rem;
     font-weight: 600;
 }
@@ -84,7 +84,7 @@ body {
 
 a.sidebar-link {
     padding: .625rem 1.625rem;
-    color: #198754;
+    color: forestgreen;
     display: block;
     font-size: 0.9rem;
     white-space: nowrap;
@@ -97,8 +97,8 @@ a.sidebar-link {
 }
 
 a.sidebar-link:hover {
-    background-color: rgba(255, 255, 255, .075);
-    border-left: 3px solid #051b11;
+    background-color: lightgreen; /*rgba(255, 255, 255, .075); */
+    border-left: 3px solid green;
 }
 
 .sidebar-item {
@@ -109,7 +109,7 @@ a.sidebar-link:hover {
     position: absolute;
     top: 0;
     left: 70px;
-    /* background-color: #0e2238;  */
+    background-color:white;
     padding: 0;
     min-width: 15rem;
     display: none;
