@@ -8,7 +8,7 @@
     
     if ($_POST) {
         if(excluirAluno($_SESSION['id'])){
-            echo "<script>alert()</script>";
+            //echo "<script>alert()</script>";
             header('Location: index.php');
         } else {
             echo '<p class="text-white">Erro ao excluir o registro!</p>';
@@ -22,19 +22,19 @@
     <form action="" method="POST" class="bg-success text-white">
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label m-2">Insira o nome: </label>
+                <label for="nome" class="form-label m-2">Nome: </label>
                 <input type="text" class="form-control m-2 bg-light text-success" name="nome" value="<?=$dados['nome']?>" disabled>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label m-2">Insira a idade: </label>
+                <label for="nome" class="form-label m-2">Idade: </label>
                 <input type="text" class="form-control m-2 bg-light text-success" name="idade" value="<?=$dados['idade']?>"disabled>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label m-2">Insira a série: </label>
+                <label for="nome" class="form-label m-2">Série: </label>
                 <input type="text" class="form-control m-2 bg-light text-success" name="serie" value="<?=$dados['serie']?>"disabled>
             </div>
         </div>

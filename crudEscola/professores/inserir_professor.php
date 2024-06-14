@@ -7,7 +7,7 @@
     <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Nº de Registro: </label>
-                <input type="text" class="form-control m-2 bg-light text-success" name="id" disabled>
+                <input type="text" class="form-control m-2 bg-light text-success" name="id" value="<?=$_SESSION['id']?>" disabled>
             </div>
         </div>
         <div class="row">
@@ -55,7 +55,7 @@
         $formacao = $_POST['formacao'];
         
         if ($nome != "" && $disciplina != "" && $formacao != "") {
-            if(inserirAluno($nome, $disciplina, $formacao)){
+            if(inserirProf($nome, $disciplina, $formacao)){
                 echo '<p class="text-white">Registro inserido com sucesso!</p>';
             } else {
                 echo '<p class="text-white">Erro ao inserir o registro!</p>';

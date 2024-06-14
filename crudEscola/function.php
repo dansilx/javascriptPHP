@@ -62,7 +62,13 @@
             $stmt->bindValue(":serie", $serie);
             $stmt->execute();
             $id = buscarIdAluno();
-            criarMatricula($id, $turma);
+            if ($id) {
+                $matricula = criarMatricula($id, $turma);
+                return $matricula;
+            } else {
+                throw new Exception("Falha ao buscar o ID do aluno");
+            }
+
         } catch (Exception $e) {
             return 0;
         }
@@ -89,7 +95,7 @@
 
     function consultarAlunoId($id) {
         try {
-            $sql = "SELECT * FROM produto WHERE id = :id";
+            $sql = "SELECT * FROM estudantes WHERE id = :id";
             $conexao = conectarBanco();
             $stmt = $conexao->prepare($sql);
             $stmt->bindValue(":id", $id);
@@ -148,4 +154,72 @@ function retornarProfessores() {
     } catch(Exception $e) {
         return 0;
     } 
+}
+
+// ===============================================================
+//                    INSERIR PROFESSOR
+// ===============================================================
+
+function inserirProf($nome, $disciplina, $formacao) {
+    try {
+
+        $sql = "INSERT INTO  professores (nome, disciplina, formacao) VALUES (:nome, :disciplina, :formacao)";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":nome", $nome);
+        $stmt->bindValue(":disciplina", $disciplina);
+        $stmt->bindValue(":formacao", $formacao);
+        return $stmt->execute();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
+
+// ===============================================================
+//                    ALTERAR PROFESSOR
+// ===============================================================
+
+function consultarProfId($id) {
+    try {
+        $sql = "SELECT * FROM professores WHERE id = :id";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
+
+function alterarProf($nome, $disciplina, $formacao, $id) {
+    try {
+        $sql = "UPDATE professores SET nome = :nome, disciplina = :disciplina, formacao = :formacao
+                WHERE id = :id";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":nome", $nome);
+        $stmt->bindValue(":idade", $disciplina);
+        $stmt->bindValue(":serie", $formacao);
+        $stmt->bindValue(":id", $id);
+        return $stmt->execute();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
+
+// ===============================================================
+//                    EXCLUIR PROFESSOR
+// ===============================================================
+
+function excluirProf($id) {
+    try {
+        $sql = "DELETE FROM professores WHERE id = :id"; 
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        return $stmt->execute();
+    } catch (Exception $e) {
+        return 0;
+    }
 }
