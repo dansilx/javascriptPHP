@@ -49,3 +49,17 @@ INSERT INTO turmas (nome, ano, professor_id) VALUES
 ('Turma C', 2024, 3),  -- Ana Pereira
 ('Turma D', 2024, 4),  -- Carlos Alberto
 ('Turma E', 2024, 5);  -- Luiza Ramos
+
+INSERT INTO matriculas (estudante_id, turma_id) VALUES 
+(1, 1),  -- Fernanda Lima in Turma A
+(2, 2),  -- Gustavo Silva in Turma B
+(3, 3),  -- Helena Santos in Turma C
+(4, 4),  -- Igor Mendes in Turma D
+(5, 5);  -- Juliana Costa in Turma E
+
+INSERT INTO estudantes (nome, idade, serie) VALUES 
+('Fernanda Lima', 14, '8ª série'),
+('Gustavo Silva', 15, '9ª série'),
+('Helena Santos', 13, '7ª série'),
+('Igor Mendes', 12, '6ª série'),
+('Juliana Costa', 14, '8ª série');
