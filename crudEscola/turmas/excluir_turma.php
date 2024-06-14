@@ -51,7 +51,7 @@
         <div class="row">
             <div class="col">
                 <p class="text-danger ms-2 my-4">Deseja realmente excluir?!</p>
-                <button type="submit" class="btn btn-outline-light m-2">Excluir</button>
+                <input type="submit" class="btn btn-outline-light m-2" value="Excluir" name="btnExcluir">
             </div>
         </div>
     </form>
