@@ -6,17 +6,17 @@
         $_SESSION['id'] = $id;
     } else {
         $id = $_SESSION['id'];
-        $dados = consultarProfId($id);
+        $dados = consultarTurmaId($id);
     }
     $_SESSION['id'] = $id;
 
     if ($_POST) {
         $nome = $_POST['nome'];
-        $disciplina = $_POST['disciplina'];
-        $formacao = $_POST['formacao'];
-        if ($nome != "" && $disciplina != "" && $formacao != "" && $_SESSION['id'] != "") {
+        $idade = $_POST['ano'];
+        $serie = $_POST['professor_id'];
+        if ($nome != "" && $ano != "" && $professor_id != "" && $_SESSION['id'] != "") {
             session_start();
-            if(alterarProf($nome, $disciplina, $formacao, $_SESSION['id'])){
+            if(alterarTurma($nome, $ano, $professor_id, $_SESSION['id'])){
                 echo '<p class="text-white">Registro alterado com sucesso!</p>';
             } else {
                 echo '<p class="text-white">Erro ao alterar o registro!</p>';
@@ -26,17 +26,11 @@
         }
     }
     
-    $dados = consultarProfId($id);
+    $dados = consultarTurmaId($id);
 ?>
 
-    <h3 class="text-white">Alterar Professor</h3>
+    <h3 class="text-white">Alterar Turma</h3>
     <form action=""  method="POST" class="bg-success text-white">
-        <div class="row">
-            <div class="col">
-                <label for="nome" class="form-label m-2">Nº de Registro: </label>
-                <input type="text" class="form-control m-2 bg-light text-success" name="id" value="<?=$_SESSION['id']?>" disabled>
-            </div>
-        </div>
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label m-2">Alterar o nome: </label>
@@ -45,14 +39,14 @@
         </div>
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label m-2">Alterar a disciplina: </label>
-                <input type="text" class="form-control m-2 bg-light text-success" name="disciplina" value="<?=$dados['disciplina']?>">
+                <label for="nome" class="form-label m-2">Alterar o ano: </label>
+                <input type="text" class="form-control m-2 bg-light text-success" name="ano" value="<?=$dados['ano']?>">
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label m-2">Alterar a formação: </label>
-                <input type="text" class="form-control m-2 bg-light text-success" name="formacao" value="<?=$dados['formacao']?>">
+                <label for="nome" class="form-label m-2">Alterar o Nº de Registro: </label>
+                <input type="text" class="form-control m-2 bg-light text-success" name="professor_id" value="<?=$dados['professor_id']?>">
             </div>
         </div>
         <!-- <div class="rol">
@@ -70,7 +64,7 @@
         </div> -->
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-outline-light m-2">Salvar</button>
+                <button type="submit" class="btn btn-outline-success m-2">Salvar</button>
             </div>
         </div>
     </form>

@@ -223,3 +223,88 @@ function excluirProf($id) {
         return 0;
     }
 }
+
+// ===============================================================
+//                    INDEX TURMA
+// ===============================================================
+
+function retornarTurmas() {
+    try {
+        $sql = "SELECT  t.*, p.nome as nome_professor
+                FROM turmas t
+                INNER JOIN professores p ON p.id = t.professor_id";
+                
+        $conexao = conectarBanco();
+        return $conexao->query($sql);
+    } catch(Exception $e) {
+        return 0;
+    } 
+}
+
+// ===============================================================
+//                    INSERIR TURMA
+// ===============================================================
+
+function inserirTurma($nome, $ano, $professor_id) {
+    try {
+
+        $sql = "INSERT INTO  turmas (nome, ano, professor_id) VALUES (:nome, :ano, :professor_id)";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":nome", $nome);
+        $stmt->bindValue(":ano", $ano);
+        $stmt->bindValue(":professor_id", $professor_id);
+        return $stmt->execute();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
+
+// ===============================================================
+//                    ALTERAR TURMA
+// ===============================================================
+
+function consultarTurmaId($id) {
+    try {
+        $sql = "SELECT * FROM turmas WHERE id = :id";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
+
+function alterarTurma($nome, $ano, $professor_id, $id) {
+    try {
+        $sql = "UPDATE professores SET nome = :nome, ano = :ano, professor_id = :professor_id
+                WHERE id = :id";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":nome", $nome);
+        $stmt->bindValue(":ano", $ano);
+        $stmt->bindValue(":professor_id", $professor_id);
+        $stmt->bindValue(":id", $id);
+        return $stmt->execute();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
+
+// ===============================================================
+//                    EXCLUIR TURMA
+// ===============================================================
+
+function excluirTurma($id) {
+    try {
+        $sql = "DELETE FROM turmas WHERE id = :id"; 
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        return $stmt->execute();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
