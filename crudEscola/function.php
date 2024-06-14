@@ -1,15 +1,21 @@
 <?php
-
+// ===============================================================
+//                   CONECTAR COM O BANCO
+// ===============================================================
     function conectarBanco() {
         $conexao = new PDO("mysql:host=localhost; dbname=escola", "root", "");
         return $conexao;
     }
 
+// ===============================================================
+//                    INDEX ALUNO
+// ===============================================================
+
     function retornarAlunos() {
         try {
-            $sql = "SELECT  e.id, e.nome, e.idade, e.serie, m.turma_id
+            $sql = "SELECT  e.*, m.turma_id
                     FROM estudantes e
-              INNER JOIN matriculas m ON m.estudante_id = e.id";
+                    INNER JOIN matriculas m ON m.estudante_id = e.id";
                                             ;
                     
             $conexao = conectarBanco();
@@ -18,6 +24,21 @@
             return 0;
         } 
     }
+
+    // function retornarAluno() {
+    //     try {
+    //         $sql = "SELECT e.*, a.idade as aluno_id FROM estudante e 
+    //                 INNER JOIN aluno_id a ON a.aluno_id = e.aluno_id";
+    //         $conexao = conectarBanco();
+    //         return $conexao->query($sql);
+    //     } catch(Exception $e) {
+    //         return 0;
+    //     } 
+    // }
+
+// ===============================================================
+//                    INSERIR ALUNO
+// ===============================================================
 
     function retornarTurmas() {
         try {$sql = "SELECT t.nome
@@ -62,18 +83,11 @@
         return $stmt->execute();
     }
 
-    function retornarAluno() {
-        try {
-            $sql = "SELECT e.*, a.idade as aluno_id FROM estudante e 
-                    INNER JOIN aluno_id a ON a.aluno_id = e.aluno_id";
-            $conexao = conectarBanco();
-            return $conexao->query($sql);
-        } catch(Exception $e) {
-            return 0;
-        } 
-    }
+// ===============================================================
+//                    ALTERAR ALUNO
+// ===============================================================
 
-    function consultarProdutoId($id) {
+    function consultarAlunoId($id) {
         try {
             $sql = "SELECT * FROM produto WHERE id = :id";
             $conexao = conectarBanco();
@@ -81,6 +95,23 @@
             $stmt->bindValue(":id", $id);
             $stmt->execute();
             return $stmt->fetch();
+        } catch (Exception $e) {
+            return 0;
+        }
+    }
+
+    function alterarAluno($nome, $idade, $serie, $turma, $id) {
+        try {
+            $sql = "UPDATE estudantes SET nome = :nome, idade = :idade, serie = :serie, turma = :turma
+                    WHERE id = :id";
+            $conexao = conectarBanco();
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindValue(":nome", $nome);
+            $stmt->bindValue(":idade", $idade);
+            $stmt->bindValue(":serie", $serie);
+            $stmt->bindValue(":turma", $turma);
+            $stmt->bindValue(":id", $id);
+            return $stmt->execute();
         } catch (Exception $e) {
             return 0;
         }
