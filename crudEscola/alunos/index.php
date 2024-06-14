@@ -7,13 +7,13 @@
     <h3 class="text-white my-3">Registro de Alunos</h3>
     <a href="inserir_aluno.php" class="btn btn-outline-light mt-3">Adicionar Alunos</a>
 
-    <table class=" text-light mt-3 table table-hover table-striped table-success">
+    <table class=" text text-white mt-3 table table-hover table-striped table-success">
         <thead>
             <tr>
+                <th>Matrícula</th>
                 <th>Nome</th>
                 <th>Idade</th>
                 <th>Série</th>
-                <th>ID</th>
                 <th></th>
             </tr>
         </thead>
@@ -23,10 +23,10 @@
                 while($l = $linhas->fetch(PDO::FETCH_ASSOC)) {
             ?>
             <tr>
+                <td><?= $l['id_matricula']?></td>
                 <td><?= $l['nome']?></td>
                 <td><?= $l['idade']?></td>
                 <td><?= $l['serie']?></td>
-                <td><?= $l['aluno_id']?></td>
                 <td class="d-flex justify-content-end">
                     <a href="alterar_aluno.php?id=<?=$l['id']?>" class="btn btn-outline-success">
                         Alterar

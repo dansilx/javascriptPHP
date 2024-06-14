@@ -2,7 +2,7 @@ CREATE DATABASE escola;
 USE escola;
 
 CREATE TABLE estudantes (
-    id INT AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(100),
     idade INT,
     serie VARCHAR(50),
@@ -10,7 +10,7 @@ CREATE TABLE estudantes (
 );
 
 CREATE TABLE professores (
-    id INT AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(100),
     disciplina VARCHAR(50),
     formacao VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE professores (
 );
 
 CREATE TABLE turmas (
-    id INT AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(50),
     ano INT,
     professor_id INT,
@@ -29,7 +29,7 @@ CREATE TABLE turmas (
 CREATE TABLE matriculas (
     estudante_id INT,
     turma_id INT,
-    PRIMARY KEY (estudante_id, turma_id),
+    id_matricula INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     FOREIGN KEY (estudante_id) REFERENCES estudantes(id),
     FOREIGN KEY (turma_id) REFERENCES turmas(id)
 );

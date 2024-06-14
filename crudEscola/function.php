@@ -7,7 +7,11 @@
 
     function retornarAlunos() {
         try {
-            $sql = "SELECT * FROM estudantes";
+            $sql = "SELECT  e.id, e.nome, e.idade, e.serie, m.turma_id
+                    FROM estudantes e
+              INNER JOIN matriculas m ON m.estudante_id = e.id";
+                                            ;
+                    
             $conexao = conectarBanco();
             return $conexao->query($sql);
         } catch(Exception $e) {
@@ -15,20 +19,47 @@
         } 
     }
 
-    function inserirAluno($nome, $idade, $serie, $idAluno) {
+    function retornarTurmas() {
+        try {$sql = "SELECT t.nome
+                FROM turmas t";
+
+        $conexao = conectarBanco();
+        return $conexao->query($sql);
+        } catch(Exception $e) {
+            return 0;
+        }
+    }
+
+    function inserirAluno($nome, $idade, $serie, $turma) {
         try {
 
-            $sql = "INSERT INTO  estudante (nome, idade, serie, id) VALUES (:nome, :idade, :serie, :id)";
+            $sql = "INSERT INTO  estudantes (nome, idade, serie) VALUES (:nome, :idade, :serie)";
             $conexao = conectarBanco();
             $stmt = $conexao->prepare($sql);
             $stmt->bindValue(":nome", $nome);
             $stmt->bindValue(":idade", $idade);
             $stmt->bindValue(":serie", $serie);
-            $stmt->bindValue("id", $idAluno);
-            return $stmt->execute();
+            $stmt->execute();
+            $id = buscarIdAluno();
+            criarMatricula($id, $turma);
         } catch (Exception $e) {
             return 0;
         }
+    }
+
+    function buscarIdAluno() {
+        $sql = "SELECT id FROM estudantes ORDER BY id DESC LIMIT 1";
+        $conexao = conectarBanco();
+        return $conexao->query($sql);
+    }
+
+    function criarMatricula($idAluno, $idTurma ) {
+        $sql = "INSERT INTO matriculas (estudante_id, turma_id) VALUES (:estudante_id, :turma_id)";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":estudante_id", $idAluno);
+        $stmt->bindValue(":turma_id", $idTurma);
+        return $stmt->execute();
     }
 
     function retornarAluno() {
