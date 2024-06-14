@@ -28,10 +28,10 @@
                 <td><?= $l['idade']?></td>
                 <td><?= $l['serie']?></td>
                 <td class="d-flex justify-content-end">
-                    <a href="alterar_aluno.php?id=<?=$l['id']?>" class="btn btn-outline-success">
+                    <a href="alterar_aluno.php?id=<?=$l['id']?>" class="btn btn-outline-success m-2">
                         Alterar
                     </a>
-                    <a href="excluir_aluno.php?id=<?=$l['id']?>" class="btn btn-outline-success">
+                    <a href="excluir_aluno.php?id=<?=$l['id']?>" class="btn btn-outline-success m-2">
                         Excluir
                     </a>
                 </td>

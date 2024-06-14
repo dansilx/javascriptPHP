@@ -33,3 +33,19 @@ CREATE TABLE matriculas (
     FOREIGN KEY (estudante_id) REFERENCES estudantes(id),
     FOREIGN KEY (turma_id) REFERENCES turmas(id)
 );
+
+
+
+INSERT INTO professores (nome, disciplina, formacao) VALUES 
+('Maria Silva', 'Matemática', 'Mestrado em Matemática'),
+('João Souza', 'História', 'Doutorado em História'),
+('Ana Pereira', 'Biologia', 'Licenciatura em Biologia'),
+('Carlos Alberto', 'Física', 'Mestrado em Física'),
+('Luiza Ramos', 'Português', 'Doutorado em Literatura Brasileira');
+
+INSERT INTO turmas (nome, ano, professor_id) VALUES 
+('Turma A', 2024, 1),  -- Maria Silva
+('Turma B', 2024, 2),  -- João Souza
+('Turma C', 2024, 3),  -- Ana Pereira
+('Turma D', 2024, 4),  -- Carlos Alberto
+('Turma E', 2024, 5);  -- Luiza Ramos

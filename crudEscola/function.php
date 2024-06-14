@@ -116,3 +116,36 @@
             return 0;
         }
     }
+
+// ===============================================================
+//                    EXCLUIR ALUNO
+// ===============================================================
+
+function excluirAluno($id) {
+    try {
+        $sql = "DELETE FROM estudantes WHERE id = :id"; 
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        return $stmt->execute();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
+
+// ===============================================================
+//                    INDEX PROFESSORES
+// ===============================================================
+
+function retornarProfessores() {
+    try {
+        $sql = "SELECT  p.*
+                FROM professores p";
+                                        ;
+                
+        $conexao = conectarBanco();
+        return $conexao->query($sql);
+    } catch(Exception $e) {
+        return 0;
+    } 
+}

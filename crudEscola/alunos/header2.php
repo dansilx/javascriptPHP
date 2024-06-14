@@ -37,10 +37,13 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="alunos/index.php" class="sidebar-link">Alunos</a>
+                            <a href="../alunos/index.php" class="sidebar-link">Alunos</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="professores/index.php" class="sidebar-link">Professores</a>
+                            <a href="../professores/index.php" class="sidebar-link">Professores</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../turma/index.php" class="sidebar-link">Turmas</a>
                         </li>
                     </ul>
                 </li>

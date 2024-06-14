@@ -46,8 +46,8 @@
         </div>
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label m-2">Alterar a séria: </label>
-                <input type="text" class="form-control m-2 bg-light text-success" name="valor">
+                <label for="nome" class="form-label m-2">Alterar a série: </label>
+                <input type="text" class="form-control m-2 bg-light text-success" name="serie" value="<?=$dados['serie']?>">
             </div>
         </div>
         <!-- <div class="rol">

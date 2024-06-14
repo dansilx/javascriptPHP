@@ -8,7 +8,7 @@
     <title>Escola</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="index.php" class="sidebar-link">
+                    <a href="../index.php" class="sidebar-link">
                         <i class="lni lni-home"></i>
                         <span>Home</span>
                     </a>
@@ -37,10 +37,13 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="alunos/index.php" class="sidebar-link">Alunos</a>
+                            <a href="../alunos/index.php" class="sidebar-link">Alunos</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="professores/index.php" class="sidebar-link">Professores</a>
+                            <a href="../professores/index.php" class="sidebar-link">Professores</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../turma/index.php" class="sidebar-link">Turmas</a>
                         </li>
                     </ul>
                 </li>
@@ -105,7 +108,7 @@
         <div class="main p-3">
             <div class="text-center"></div>
 
-    <main>
+    <main bg-success>
 
     <?php
         require_once("../function.php");
