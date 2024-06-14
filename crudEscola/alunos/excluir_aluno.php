@@ -2,13 +2,13 @@
     require_once("header2.php");
     if (isset($_GET['id'])){
         $id = $_GET['id'];
-        session_start();
+        //session_start();
         $_SESSION['id'] = $id;
     }
     
     if ($_POST) {
         if(excluirAluno($_SESSION['id'])){
-            //echo "<script>alert()</script>";
+            echo "<script>alert()</script>";
             header('Location: index.php');
         } else {
             echo '<p class="text-white">Erro ao excluir o registro!</p>';
