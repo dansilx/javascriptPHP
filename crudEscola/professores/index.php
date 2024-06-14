@@ -10,7 +10,7 @@
     <table class="mt-3 table table-hover table-striped text-white table-success">
         <thead>
             <tr>
-                <th>Nº </th>
+                <th>Nº Registro</th>
                 <th>Nome</th>
                 <th>Disciplina</th>
                 <th>Formação</th>

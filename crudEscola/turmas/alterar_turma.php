@@ -2,7 +2,7 @@
     require_once("header2.php");
     if (isset($_GET['id'])){
         $id = $_GET['id'];
-        session_start();
+        //session_start();
         $_SESSION['id'] = $id;
     } else {
         $id = $_SESSION['id'];
@@ -21,8 +21,8 @@
             } else {
                 echo '<p class="text-white">Erro ao alterar o registro!</p>';
             }
-        } else {
-            echo '<p class="text-white">Preencha todos os campos!</p>';
+        // } else {
+        //     echo '<p class="text-white">Preencha todos os campos!</p>';
         }
     }
     
@@ -64,7 +64,7 @@
         </div> -->
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-outline-success m-2">Salvar</button>
+                <button type="submit" class="btn btn-outline-light m-2">Salvar</button>
             </div>
         </div>
     </form>

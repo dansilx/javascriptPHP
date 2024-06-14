@@ -13,7 +13,7 @@
 
     function retornarAlunos() {
         try {
-            $sql = "SELECT  e.*, m.turma_id
+            $sql = "SELECT  e.*, m.id_matricula, m.turma_id
                     FROM estudantes e
                     INNER JOIN matriculas m ON m.estudante_id = e.id";
                                             ;
@@ -228,7 +228,7 @@ function excluirProf($id) {
 //                    INDEX TURMA
 // ===============================================================
 
-function retornarTurmas() {
+function mostrarTurma() {
     try {
         $sql = "SELECT  t.*, p.nome as nome_professor
                 FROM turmas t

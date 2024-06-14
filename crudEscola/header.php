@@ -43,7 +43,7 @@
                             <a href="professores/index.php" class="sidebar-link">Professores</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="turma/index.php" class="sidebar-link">Turmas</a>
+                            <a href="turmas/index.php" class="sidebar-link">Turmas</a>
                         </li>
                     </ul>
                 </li>

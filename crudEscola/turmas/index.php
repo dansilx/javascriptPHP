@@ -4,8 +4,8 @@
 
 ?>
 
-    <h3 class="text-white my-3">Registro de Alunos</h3>
-    <a href="inserir_aluno.php" class="btn btn-outline-light mt-3">Adicionar Alunos</a>
+    <h3 class="text-white my-3">Registro de Turmas</h3>
+    <a href="inserir_turma.php" class="btn btn-outline-light mt-3">Adicionar Turma</a>
 
     <table class=" text text-white mt-3 table table-hover table-striped table-success">
         <thead>
@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             <?php
-                $linhas = retornarTurmas();
+                $linhas = mostrarTurma();
                 while($l = $linhas->fetch(PDO::FETCH_ASSOC)) {
             ?>
             <tr>

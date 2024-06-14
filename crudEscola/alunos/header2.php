@@ -43,7 +43,7 @@
                             <a href="../professores/index.php" class="sidebar-link">Professores</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="../turma/index.php" class="sidebar-link">Turmas</a>
+                            <a href="../turmas/index.php" class="sidebar-link">Turmas</a>
                         </li>
                     </ul>
                 </li>
@@ -113,5 +113,5 @@
     <?php
         require_once("../function.php");
          if(conectarBanco()) {
-            echo '<p class="text-white">Conexão realizada com sucesso!</p>';
+            //echo '<p class="text-white">Conexão realizada com sucesso!</p>';
   }
