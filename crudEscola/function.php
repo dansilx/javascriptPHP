@@ -13,7 +13,7 @@
 
     function retornarAlunos() {
         try {
-            $sql = "SELECT  e.*, m.id_matricula, m.turma_id
+            $sql = "SELECT e.id, e.nome, e.idade, e.serie, m.id_matricula, m.turma_id
                     FROM estudantes e
                     INNER JOIN matriculas m ON m.estudante_id = e.id";
                                             ;
@@ -42,7 +42,7 @@
 
     function retornarTurmas() {
         try {$sql = "SELECT t.nome
-                FROM turmas t";
+                    FROM turmas t";
 
         $conexao = conectarBanco();
         return $conexao->query($sql);
@@ -147,7 +147,6 @@ function retornarProfessores() {
     try {
         $sql = "SELECT  p.*
                 FROM professores p";
-                                        ;
                 
         $conexao = conectarBanco();
         return $conexao->query($sql);

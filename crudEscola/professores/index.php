@@ -28,10 +28,10 @@
                 <td><?= $l['disciplina']?></td>
                 <td><?= $l['formacao']?></td>
                 <td class="d-flex justify-content-end">
-                    <a href="alterar_professor.php" class="btn btn-outline-success m-2">
+                    <a href="alterar_professor.php?id=<?=$l['id']?>" class="btn btn-outline-success m-2">
                         Alterar
                     </a>
-                    <a href="excluir_professor.php" class="btn btn-outline-success m-2">
+                    <a href="excluir_professor.phpid=<?=$l['id']?>" class="btn btn-outline-success m-2">
                         Excluir
                     </a>
                 </td>
